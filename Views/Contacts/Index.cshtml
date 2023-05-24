@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Контакти";
+}
+
+<h2 class="contact-header">Зв'яжіться з нами</h2>
+
+<section class="our-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 mt-1">
+                <div class="main-title text-center">
+                    <h4>Ми завжди чекаємо на ваші відгуки!</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 col-xl-3 pr0 pl0 plpr15-lg">
+                <div class="contact_icon_box mb50">
+                    <div class="icon float-left"><span class="flaticon-map"></span></div>
+                    <div class="details">
+                        <h5 class="title">Адреса</h5>
+                        <p>Україна, Одеса<br>просп.Шевченка, 1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="contact_icon_box mb50">
+                    <div class="icon float-left"><span class="flaticon-phone"></span></div>
+                    <div class="details">
+                        <h5 class="title">Контакти</h5>
+                        <p>Телефон: +380777777777<br>E-mail: support@estate.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 pr0 pl0 plpr15-lg">
+                <div class="contact_icon_box mb50">
+                    <div class="icon float-left"><span class="flaticon-clock"></span></div>
+                    <div class="details">
+                        <h5 class="title">Графік роботи</h5>
+                        <p>Понеділок - П'ятниця: 09:00 - 20:00<br>Суббота - Неділя: 10:30 - 22:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="h550" id="map-canvas"></div>
+            </div>
+        </div>
+        <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0"
+                marginwidth="0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2748.4391370958833!2d30.749249989228435!3d46.45980906129254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c631628f04ac87%3A0x763df5ec1b5b99fd!2z0J3QsNGG0LjQvtC90LDQu9GM0L3Ri9C5INGD0L3QuNCy0LXRgNGB0LjRgtC10YIgwqvQntC00LXRgdGB0LrQsNGPINC_0L7Qu9C40YLQtdGF0L3QuNC60LDCuw!5e0!3m2!1sru!2sua!4v1683814729749!5m2!1sru!2sua"></iframe>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-8">
+                <div class="form_grid mt100">
+                    <h4 class="text-center mb50 align-content-center">Надішліть нам електронного листа</h4>
+                    <form class="contact_form" name="contact_form" action="#" method="post" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <input name="form_name" class="form-control" required="required" type="text"
+                                        placeholder="Ім'я">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input name="form_email" class="form-control required email" required="required"
+                                        type="email" placeholder="E-mail">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <textarea name="form_message" class="form-control required" rows="6" required
+                                        placeholder="Напишіть ваш відгук або запитання"></textarea>
+                                </div>
+                                <div class="form-group mb-3 mt-2">
+                                    <button type="button" class="btn btn-thm">Відправити</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

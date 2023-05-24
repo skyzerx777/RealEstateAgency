@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <partial name="_Favicons" />
+    <script src="https://kit.fontawesome.com/90d7352a01.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img class="mx-2" src="~/images/LogoImage.png" alt="" width="45" height="50" />Real Estate
+                    Agency</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav justify-content-center align-items-center">
+                        <a class="nav-link" href="/">Головна</a>
+                        <a class="nav-link" href="/sales">Купівля</a>
+                        <a class="nav-link" href="/rent">Оренда</a>
+                        <a class="nav-link" href="/about">Про нас</a>
+                        <a class="nav-link" href="/contacts">Контакти</a>
+                        <a class="nav-link" href="/reviews">Відгуки</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer class="text-center text-lg-start">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <img class="user-select-none" src="~/images/LogoImage.png" alt="" width="45" height="50"> <span
+                        class="user-select-none footer-logo-text">Real Estate Agency</span>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-md-0 mb-4">
+                    <h5 class="text-uppercase">Посилання</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="/">Головна</a>
+                        </li>
+                        <li>
+                            <a href="/sales">Купівля</a>
+                        </li>
+                        <li>
+                            <a href="/rent">Оренда</a>
+                        </li>
+                        <li>
+                            <a href="/about">Про нас</a>
+                        </li>
+                        <li>
+                            <a href="/contacts">Контакти</a>
+                        </li>
+                        <li>
+                            <a href="/reviews">Відгуки</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-md-0">
+                    <h5 class="text-uppercase">Соціальні мережі</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#" class="text-dark">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-dark">Twitter</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-dark">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            &copy; 2023 - Yevhenii Hrebenshchykov - All rights reserved
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

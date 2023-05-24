@@ -1,0 +1,168 @@
+﻿$main-color: #3f8d70;
+$text-color: #303030;
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px, );
+
+* {
+    // font-family: Montserrat;
+    font-family: Bahnschrift;
+    // font-weight: 500;
+}
+
+.navbar {
+    background-color: #fff;
+}
+
+.navbar-nav {
+    width: 85%;
+
+    @media screen and (max-width: 992px) {
+        width: 100%;
+    }
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    transition: 0.3s;
+    color: $text-color !important;
+    font-size: 18px;
+
+    @media screen and (min-width: 992px) {
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            border-radius: 3px;
+            background-color: $main-color;
+            bottom: 3px;
+            left: 0;
+            transform-origin: center;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover {
+            color: $main-color;
+
+            &::before {
+                transform-origin: center;
+                transform: scaleX(1);
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #354f52;
+    color: #cad2c5;
+}
+
+.footer-logo-text {
+    font-size: 20px;
+}
+
+.list-unstyled > li {
+    margin-bottom: 15px;
+
+    @media screen and (min-width: 992px) {
+        margin-bottom: 5px;
+    }
+}
+
+.list-unstyled > li > a {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    color: #cad2c5 !important;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.filters-section {
+    background-color: $main-color;
+
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    select.form-select {
+        background-color: #fff;
+        color: $text-color;
+        border: none;
+        width: 90%;
+        margin: 0 auto;
+
+        &:focus {
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+
+        @media screen and (min-width: 992px) {
+            width: 100%;
+        }
+    }
+}
+
+button.btn {
+    background-color: #fff;
+    color: $text-color;
+    transition: 0.3s;
+    border: none;
+    width: 90%;
+    margin: 0 auto !important;
+
+    &:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+
+    &:hover {
+        text-decoration: none;
+        background-color: #fff;
+        color: $main-color;
+        background-color: #52796f;
+        color: #fff;
+    }
+
+    @media screen and (min-width: 992px) {
+        width: 100%;
+    }
+}
+
+.contact-header {
+    text-align: center !important;
+}
+
+#about {
+    padding: 80px 0;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#about h3 {
+    margin-top: 30px;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 20px;
+}
+
+#about img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.about-columns {
+    @media screen and (max-width: 1200px) {
+        margin-bottom: 50px;
+    }
+}
