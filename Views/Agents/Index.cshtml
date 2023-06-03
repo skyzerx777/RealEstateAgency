@@ -1,0 +1,57 @@
+﻿@model IEnumerable<RealEstateAgency.Models.Agent>
+
+@{
+    Layout = "_adminLayout";
+}
+
+<body>
+<p>
+        <a class="position-relative start-50 translate-middle text-decoration-none text-primary fs-3 fw-bold" asp-action="Create">Додати</a>
+</p>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommissionPercentage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommissionPercentage)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AgentID">Змінити</a> |
+                <a asp-action="Details" asp-route-id="@item.AgentID">Деталі</a> |
+                <a asp-action="Delete" asp-route-id="@item.AgentID">Видалити</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+        </div>
+    </div>
+</body>

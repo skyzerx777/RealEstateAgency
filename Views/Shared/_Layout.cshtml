@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <div class="wrapper">   
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -37,7 +38,9 @@
         </nav>
     </header>
     <main>
-        @RenderBody()
+        <div class="content">
+            @RenderBody()
+        </div>
     </main>
     <footer class="text-center text-lg-start">
         <div class="container p-4">
@@ -89,6 +92,7 @@
             &copy; 2023 - Yevhenii Hrebenshchykov - All rights reserved
         </div>
     </footer>
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -8,6 +8,21 @@ $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 14
     // font-weight: 500;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 .navbar {
     background-color: #fff;
 }
@@ -56,6 +71,7 @@ $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 14
 footer {
     background-color: #354f52;
     color: #cad2c5;
+    flex-shrink: 0;
 }
 
 .footer-logo-text {

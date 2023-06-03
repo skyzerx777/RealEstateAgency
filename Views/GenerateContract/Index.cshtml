@@ -1,0 +1,176 @@
+﻿@model ContractViewModel
+@{
+    Layout = "_adminLayout";
+}
+<form method="post" action="/GenerateContract/GenerateContract">
+    @Html.AntiForgeryToken()
+        <div class="form-group">
+            <h3>Інформація про продавця:</h3>
+            <label for="sellerFullName">ПІБ продавця:</label>
+            <input type="text" id="sellerFullName" name="SellerFullName" required>
+            <br>
+
+            <label for="sellerBirthday">Дата народження продавця:</label>
+            <input type="text" id="sellerBirthday" name="SellerBirthday" required>
+            <br>
+
+            <label for="sellerTaxNumber">РНОКПП продавця:</label>
+            <input type="text" id="sellerTaxNumber" name="SellerTaxNumber" required>
+            <br>
+
+            <label for="sellerPassportNumber">Номер паспорта продавця:</label>
+            <input type="text" id="sellerPassportNumber" name="SellerPassportNumber" required>
+            <br>
+
+            <label for="sellerIssuedPassport">Ким виданий паспорт продавця:</label>
+            <input type="text" id="sellerIssuedPassport" name="SellerIssuedPassport" required>
+            <br>
+
+            <label for="sellerCityPassport">Місто, в якому виданий паспорт продавця:</label>
+            <input type="text" id="sellerCityPassport" name="SellerCityPassport" required>
+            <br>
+
+            <label for="sellerYearPassport">Рік видачі паспорта продавця:</label>
+            <input type="text" id="sellerYearPassport" name="SellerYearPassport" required>
+            <br>
+
+            <label for="sellerAdressCity">Місто проживання продавця:</label>
+            <input type="text" id="sellerAdressCity" name="SellerAdressCity" required>
+            <br>
+
+            <label for="sellerAdressStreet">Вулиця проживання продавця:</label>
+            <input type="text" id="sellerAdressStreet" name="SellerAdressStreet" required>
+            <br>
+
+            <label for="sellerAdressHome">Номер будинку проживання продавця:</label>
+            <input type="text" id="sellerAdressHome" name="SellerAdressHome" required>
+            <br>
+
+            <label for="sellerAddressFlat">Номер квартири продавця:</label>
+            <input type="text" id="sellerAddressFlat" name="SellerAddressFlat" required>
+            <br>
+        </div>
+        <div class="form-group">
+            <h3>Інформація про покупця:</h3>
+            <label for="buyerFullName">ПІБ покупця:</label>
+            <input type="text" id="buyerFullName" name="BuyerFullName" required>
+            <br>
+
+            <label for="buyerBirthday">Дата народження покупця:</label>
+            <input type="text" id="buyerBirthday" name="BuyerBirthday" required>
+            <br>
+
+            <label for="buyerTaxNumber">РНОКПП покупця:</label>
+            <input type="text" id="buyerTaxNumber" name="BuyerTaxNumber" required>
+            <br>
+
+            <label for="buyerPassportNumber">Номер паспорта покупця:</label>
+            <input type="text" id="buyerPassportNumber" name="BuyerPassportNumber" required>
+            <br>
+
+            <label for="buyerIssuedPassport">Ким виданий паспорт покупця:</label>
+            <input type="text" id="buyerIssuedPassport" name="BuyerIssuedPassport" required>
+            <br>
+
+            <label for="buyerCityPassport">Місто, в якому виданий паспорт покупця:</label>
+            <input type="text" id="buyerCityPassport" name="BuyerCityPassport" required>
+            <br>
+
+            <label for="buyerYearPassport">Рік видачі паспорта покупця:</label>
+            <input type="text" id="buyerYearPassport" name="BuyerYearPassport" required>
+            <br>
+
+            <label for="buyerAdressCity">Місто проживання покупця:</label>
+            <input type="text" id="buyerAdressCity" name="BuyerAdressCity" required>
+            <br>
+
+            <label for="buyerAdressStreet">Вулиця проживання покупця:</label>
+            <input type="text" id="buyerAdressStreet" name="BuyerAdressStreet" required>
+            <br>
+
+            <label for="buyerAdressHome">Номер будинку проживання покупця:</label>
+            <input type="text" id="buyerAdressHome" name="BuyerAdressHome" required>
+            <br>
+
+            <label for="buyerAdressFlat">Номер квартири покупця:</label>
+            <input type="text" id="buyerAdressFlat" name="BuyerAdressFlat" required>
+            <br>
+        </div>
+
+        <div class="form-group">
+            <h3>Інформація про нерухомість, що продається:</h3>
+            <label for="propertyStreet">Вулиця нерухомості:</label>
+            <input type="text" id="propertyStreet" name="PropertyStreet" required>
+            <br>
+
+            <label for="propertyBuilding">Будинок нерухомості:</label>
+            <input type="text" id="propertyBuilding" name="PropertyBuilding" required>
+            <br>
+
+            <label for="propertyFlat">Квартира нерухомості:</label>
+            <input type="text" id="propertyFlat" name="PropertyFlat" required>
+            <br>
+
+            <label for="propertyLivingArea">Житлова площа нерухомості:</label>
+            <input type="text" id="propertyLivingArea" name="PropertyLivingArea" required>
+            <br>
+
+            <label for="propertyGeneralArea">Загальна площа нерухомості:</label>
+            <input type="text" id="propertyGeneralArea" name="PropertyGeneralArea" required>
+            <br>
+
+            <label for="amount">Сума оцінки:</label>
+            <input type="text" id="amount" name="Amount" required>
+            <br>
+
+            <label for="ownershipWholeAmount">Сума продажу (гривень):</label>
+            <input type="text" id="ownershipWholeAmount" name="OwnershipWholeAmount" required>
+            <br>
+
+            <label for="ownershipPennyAmount">Сума продажу (копійок):</label>
+            <input type="text" id="ownershipPennyAmount" name="OwnershipPennyAmount" required>
+        </div>
+
+        <div class="form-group">
+            <h3>Право власності та реєстраційний номер:</h3>
+            <label for="registrationNumber">Реєстраційний номер:</label>
+            <input type="text" id="registrationNumber" name="RegistrationNumber" required>
+            <br>
+
+            <label for="ownershipNumber">Номер права власності:</label>
+            <input type="text" id="ownershipNumber" name="OwnershipNumber" required>
+            <br>
+
+            <label for="ownershipIssue">Орган, яким видано право власності:</label>
+            <input type="text" id="ownershipIssue" name="OwnershipIssue" required>
+            <br>
+
+            <label for="ownershipYear">Рік видання права власності:</label>
+            <input type="text" id="ownershipYear" name="OwnershipYear" required>
+            <br>
+
+            <label for="ownershipRecordNumber">Реєстраційний номер права власності:</label>
+            <input type="text" id="ownershipRecordNumber" name="OwnershipRecordNumber" required>
+            <br>
+
+            <label for="ownershipDate">Дата права власності:</label>
+            <input type="text" id="ownershipDate" name="OwnershipDate" required>
+            <br>
+
+            <label for="newRegistrationNumber">Новий реєстраційний номер:</label>
+            <input type="text" id="newRegistrationNumber" name="NewRegistrationNumber" required>
+            <br>
+        </div>
+
+        <div class="form-group">
+            <h3>Загальні поля:</h3>
+            <label for="agentName">ПІБ агента:</label>
+            <input type="text" id="agentName" name="AgentName" required>
+            <br>
+
+            <label for="yearInWords">Рік (словами):</label>
+            <input type="text" id="yearInWords" name="YearInWords" required>
+            <br>
+        </div>
+        <button type="submit">Згенерувати договір</button>
+</form>

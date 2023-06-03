@@ -5,21 +5,19 @@ namespace RealEstateAgency.Models
     public class CustomerRequest
     {
         [Key]
-        public int RequestID { get; set; }
+        public Guid RequestID { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string PropertyType { get; set; } = string.Empty;
+        public Guid PropertyID { get; set; }
 
         [Required]
-        public bool IsForRent { get; set; }
+        public string Name { get; set; }
 
-        public int? NumBedrooms { get; set; }
+        [Required]
+        [Phone]
+        public string PhoneNumber { get; set; }
 
-        public int? NumBathrooms { get; set; }
-
-        public int? SquareFootage { get; set; }
-
-        public decimal? Budget { get; set; }
+        [EmailAddress]
+        public string Email { get; set; } = null;
     }
 }

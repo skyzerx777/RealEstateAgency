@@ -1,3 +1,18 @@
-﻿@{
-    ViewData["Title"] = "Нерухомість";
+﻿@model List<Property>
+@{
+    ViewData["Title"] = "Купівля";
 }
+
+<div class="property-list">
+    @foreach (var property in Model)
+    {
+        <a href="@Url.Action("Index", "PropertyDetails", new { id = property.PropertyID })">
+            <div class="property-card">
+                <img src="@property.Pictures" alt="Нерухомість" />
+                <div class="card-body">
+                    <p class="price">Ціна: @Convert.ToInt32(property.Price) грн.</p>
+                </div>
+            </div>
+        </a>
+    }
+</div>

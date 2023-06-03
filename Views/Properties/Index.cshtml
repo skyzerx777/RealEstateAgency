@@ -1,0 +1,97 @@
+﻿@model IEnumerable<RealEstateAgency.Models.Property>
+
+@{
+    Layout = "_adminLayout";
+}
+<p>
+    <a class="position-relative start-50 translate-middle text-decoration-none text-primary fs-3 fw-bold" asp-action="Create">Додати</a>
+</p>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PropertyType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsForRent)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RentPrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NumBedrooms)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NumBathrooms)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SquareFootage)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedAt)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pictures)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PropertyType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsForRent)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RentPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NumBedrooms)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NumBathrooms)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SquareFootage)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedAt)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pictures)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.PropertyID">Змінити</a> |
+                            <a asp-action="Details" asp-route-id="@item.PropertyID">Деталі</a> |
+                            <a asp-action="Delete" asp-route-id="@item.PropertyID">Видалити</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RealEstateAgency.Models;
 using System.Diagnostics;
-using MongoDB.Driver;
-using MongoDB.Bson;
 
 namespace RealEstateAgency.Controllers
 {
@@ -13,7 +12,6 @@ namespace RealEstateAgency.Controllers
         {
             _logger = logger;
         }
-
 
         public IActionResult Index()
         {
@@ -44,6 +42,7 @@ namespace RealEstateAgency.Controllers
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

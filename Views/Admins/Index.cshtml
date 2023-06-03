@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> _userManager
+
+@{
+    Layout = "_adminLayout";
+}
+
+<p>
+    <a class="position-relative start-50 translate-middle text-decoration-none text-primary fs-3 fw-bold" asp-action="Create">Додати</a>
+</p>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Ім'я користувача
+                    </th>
+                    <th>
+                        Хеш паролю
+                    </th>
+                    <th>
+                        Роль
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var roles = await _userManager.GetRolesAsync(Model.FirstOrDefault());
+                }
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PasswordHash)
+                        </td>
+                        <td>
+                            @{
+                                var userRoles = await _userManager.GetRolesAsync(item);
+                                var userRole = userRoles.FirstOrDefault();
+                            }
+                            @userRole
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Змінити</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Деталі</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Видалити</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

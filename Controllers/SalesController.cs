@@ -1,12 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using RealEstateAgency.Models;
 
 namespace RealEstateAgency.Controllers
 {
     public class SalesController : Controller
     {
-        public IActionResult Index()
+        private readonly RealEstateAgencyContext _context;
+
+        public SalesController(RealEstateAgencyContext context)
         {
-            return View();
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var propertiesForSale = await _context.Properties.Where(p => !p.IsForRent).ToListAsync();
+            return View(propertiesForSale);
         }
     }
+
 }

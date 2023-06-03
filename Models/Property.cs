@@ -5,15 +5,15 @@ namespace RealEstateAgency.Models
     public class Property
     {
         [Key]
-        public int PropertyID { get; set; }
+        public Guid PropertyID { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string PropertyType { get; set; } = string.Empty;
+        public string PropertyType { get; set; }
 
         [Required]
         [StringLength(200)]
-        public string Address { get; set; } = string.Empty;
+        public string Address { get; set; }
 
         [Required]
         public decimal Price { get; set; }
@@ -27,15 +27,12 @@ namespace RealEstateAgency.Models
 
         public int? NumBathrooms { get; set; }
 
-        public int? SquareFootage { get; set; }
+        public int SquareFootage { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public string Pictures { get; set; } = string.Empty;
 
-        [Required]
-        public int AgentID { get; set; }
+        public string Pictures { get; set; }
 
-        public Agent? Agent { get; set; }
+        public string Status { get; set; }
     }
-
 }

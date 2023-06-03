@@ -5,17 +5,6 @@
 @section Scripts {
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.slick').slick({
-                arrows: false,
-                dots: true,
-                autoplay: true,
-                autoplaySpeed: 5000
-            });
-        });
-    </script>
 }
 <section class="filters-section py-5">
     <div class="container">
@@ -24,38 +13,38 @@
                 <h2 class="text-white mb-4">Нерухомість в Одесі</h2>
             </div>
         </div>
-        <form>
+        <form id="searchForm">
             <div class="row justify-content-center">
                 <div class="col-md-3 col-sm-6">
-                    <select class="form-select rounded-pill mb-3" aria-label="sale" placeholder="Купівля/Оренда">
-                        <option selected disabled>Купівля/Оренда</option>
+                    <select class="form-select rounded-pill mb-3" aria-label="sale">
+                        <option selected disabled hidden>Купівля/Оренда</option>
                         <option value="1">Купівля</option>
                         <option value="2">Оренда</option>
                     </select>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <select class="form-select rounded-pill mb-3" id="typeSelect" aria-label="type">
-                        <option selected disabled>Тип нерухомості</option>
-                        <option value="1">Кімната</option>
-                        <option value="2">Квартира</option>
-                        <option value="3">Будинок</option>
-                        <option value="4">Земельна ділянка</option>
-                    </select>
-                </div>
+                @*<div class="col-md-3 col-sm-6">
+                <select class="form-select rounded-pill mb-3" id="typeSelect" aria-label="type">
+                <option selected disabled>Тип нерухомості</option>
+                <option value="1">Кімната</option>
+                <option value="2">Квартира</option>
+                <option value="3">Будинок</option>
+                <option value="4">Земельна ділянка</option>
+                </select>
+                </div>*@
                 <div class="col-md-3 col-sm-6 text-center">
                     <button type="submit" class="btn btn-primary rounded-pill">Пошук</button>
                 </div>
             </div>
         </form>
+
     </div>
 </section>
 <section class="slider">
     <div class="slick">
-
     </div>
 </section>
 <section id="why-choose-us py-5" class="bg-light">
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-12 text-center">
                 <h2>Чому саме ми?</h2>
@@ -63,38 +52,44 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6">
-                <div class="card shadow-sm mb-4">
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card shadow-sm mb-4 flex-fill">
                     <div class="card-body">
                         <div class="icon"><i class="fas fa-users"></i></div>
                         <h5 class="card-title">Досвідчені агенти</h5>
-                        <p class="card-text">Наша команда досвідчених агентів допоможе вам у процесі купівлі або продажу
-                            вашої нерухомості.</p>
+                        <p class="card-text">
+                            Наша команда досвідчених агентів допоможе вам у процесі купівлі або продажу
+                            вашої нерухомості.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card shadow-sm mb-4">
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card shadow-sm mb-4 flex-fill">
                     <div class="card-body">
                         <div class="icon"><i class="fas fa-home"></i></div>
                         <h5 class="card-title">Широкий вибір об'єктів нерухомості</h5>
-                        <p class="card-text">У нас є широкий вибір об'єктів нерухомості на будь-який бюджет та
-                            уподобання.</p>
+                        <p class="card-text">
+                            У нас є широкий вибір об'єктів нерухомості на будь-який бюджет та
+                            уподобання.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card shadow-sm mb-4">
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card shadow-sm mb-4 flex-fill">
                     <div class="card-body">
                         <div class="icon"><i class="fas fa-shield-alt"></i></div>
                         <h5 class="card-title">Довіра та безпека</h5>
-                        <p class="card-text">Ми пишаємося тим, що забезпечуємо надійне та безпечне середовище для всіх
-                            наших клієнтів.</p>
+                        <p class="card-text">
+                            Ми пишаємося тим, що забезпечуємо надійне та безпечне середовище для всіх
+                            наших клієнтів.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card shadow-sm mb-4">
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card shadow-sm mb-4 flex-fill">
                     <div class="card-body">
                         <div class="icon"><i class="fas fa-balance-scale"></i></div>
                         <h5 class="card-title">Справедливе та прозоре ціноутворення</h5>
@@ -102,27 +97,34 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card shadow-sm mb-4">
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card shadow-sm mb-4 flex-fill">
                     <div class="card-body">
                         <div class="icon"><i class="fas fa-map-marked-alt"></i></div>
                         <h5 class="card-title">Експертне знання галузі</h5>
-                        <p class="card-text">Наші агенти володіють експертними знаннями про місцевість, що гарантує, що
-                            ви знайдете ідеальну нерухомість.</p>
+                        <p class="card-text">
+                            Наші агенти володіють експертними знаннями про місцевість, що гарантує, що
+                            ви знайдете ідеальну нерухомість.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card shadow-sm mb-4">
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="card shadow-sm mb-4 flex-fill">
                     <div class="card-body">
                         <div class="icon"><i class="fas fa-handshake"></i></div>
                         <h5 class="card-title">Персоналізоване обслуговування</h5>
-                        <p class="card-text">Ми надаємо персоналізоване обслуговування всім нашим клієнтам, гарантуючи,
-                            що ваші потреби будуть задоволені на кожному кроці.</p>
+                        <p class="card-text">
+                            Ми надаємо персоналізоване обслуговування всім нашим клієнтам, гарантуючи,
+                            що ваші потреби будуть задоволені на кожному кроці.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
     </div>
 </section>
 <section id="company-info" class="bg-light">
@@ -130,40 +132,65 @@
         <div class="row justify-content-center text-center">
             <div class="col-md-10">
                 <h2>Про нашу компанію</h2>
-                <p class="lead">Ми - провідна агенція нерухомості, яка прагне допомогти людям знайти житло своєї мрії.
+                <p class="lead">
+                    Ми - провідна агенція нерухомості, яка прагне допомогти людям знайти житло своєї мрії.
                     Наша команда досвідчених професіоналів прагне забезпечити винятковий рівень обслуговування клієнтів
-                    і зробити процес купівлі-продажу якомога простішим.</p>
+                    і зробити процес купівлі-продажу якомога простішим.
+                </p>
             </div>
         </div>
-        <div class="row mt-5">
-            <div class="col-md-4">
+        <div class="row mt-5 mb-5">
+            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Експертиза</h4>
-                        <p class="card-text">Наша команда має багаторічний досвід роботи у сфері нерухомості та володіє
-                            знаннями та досвідом, які допоможуть вам приймати обґрунтовані рішення.</p>
+                        <p class="card-text">
+                            Наша команда має багаторічний досвід роботи у сфері нерухомості та володіє
+                            знаннями та досвідом, які допоможуть вам приймати обґрунтовані рішення.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Обслуговування клієнтів</h4>
-                        <p class="card-text">Ми пишаємося тим, що надаємо виняткове обслуговування клієнтів і робимо
-                            процес купівлі-продажу якомога простішим для наших клієнтів.</p>
+                        <p class="card-text">
+                            Ми пишаємося тим, що надаємо виняткове обслуговування клієнтів і робимо
+                            процес купівлі-продажу якомога простішим для наших клієнтів.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Задоволення</h4>
-                        <p class="card-text">Наша кінцева мета полягає в тому, щоб наші клієнти були повністю задоволені
+                        <p class="card-text">
+                            Наша кінцева мета полягає в тому, щоб наші клієнти були повністю задоволені
                             своїми операціями з нерухомістю і залишали нас з почуттям впевненості та задоволеності своїм
-                            рішенням.</p>
+                            рішенням.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
+
+<script>
+    // Обработчик события отправки формы
+    document.getElementById("searchForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Предотвращает отправку формы
+
+        var selectElement = document.querySelector("#searchForm select");
+        var selectedValue = selectElement.value;
+
+        if (selectedValue === "1") {
+            window.location.href = "/sales"; // Перенаправление на страницу для купівля
+        } else if (selectedValue === "2") {
+            window.location.href = "/rent"; // Перенаправление на страницу для оренда
+        }
+    });
+</script>
