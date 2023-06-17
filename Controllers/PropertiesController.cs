@@ -90,7 +90,7 @@ namespace RealEstateAgency.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("PropertyID,PropertyType,Address,Price,IsForRent,RentPrice,NumBedrooms,NumBathrooms,SquareFootage,CreatedAt,Pictures")] Property @property)
+        public async Task<IActionResult> Edit(Guid id, [Bind("PropertyID,PropertyType,Address,Price,IsForRent,RentPrice,NumBedrooms,NumBathrooms,SquareFootage,CreatedAt,Pictures,Status")] Property @property)
         {
             if (id != @property.PropertyID)
             {

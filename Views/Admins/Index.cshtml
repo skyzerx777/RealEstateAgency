@@ -4,6 +4,7 @@
 
 @{
     Layout = "_adminLayout";
+    //TODO add filters and sorting
 }
 
 <p>
@@ -16,9 +17,6 @@
                 <tr>
                     <th>
                         Ім'я користувача
-                    </th>
-                    <th>
-                        Хеш паролю
                     </th>
                     <th>
                         Роль
@@ -36,9 +34,6 @@
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.UserName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PasswordHash)
                         </td>
                         <td>
                             @{

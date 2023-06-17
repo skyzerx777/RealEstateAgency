@@ -21,6 +21,6 @@ namespace RealEstateAgency.Models
 
         [Required]
         [Range(0, 100)]
-        public decimal CommissionPercentage { get; set; }
+        public int CommissionPercentage { get; set; }
     }
 }

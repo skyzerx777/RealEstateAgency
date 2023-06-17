@@ -3,87 +3,83 @@
 @{
     Layout = "_adminLayout";
 }
+<div class="center-form">
+    <div class="form-container">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PropertyType" class="control-label">Тип нерухомості</label>
+                <select asp-for="PropertyType" class="form-control">
+                    <option value="Apartment">Квартира</option>
+                    <option value="House">Будинок</option>
+                    <option value="Land">Земельна ділянка</option>
+                </select>
+                <span asp-validation-for="PropertyType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label">Адреса</label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsForRent" id="IsForRent" /> Для оренди
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">Ціна покупки</label>
+                <input asp-for="Price" class="form-control" id="Price" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentPrice" class="control-label">Ціна оренди (грн/міс.)</label>
+                <input asp-for="RentPrice" class="form-control" id="RentPrice" />
+                <span asp-validation-for="RentPrice" class="text-danger"></span>
+            </div>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-</head>
-<body>
-
-    <h4>Property</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="PropertyType" class="control-label"></label>
-                    <input asp-for="PropertyType" class="form-control" />
-                    <span asp-validation-for="PropertyType" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Address" class="control-label"></label>
-                    <input asp-for="Address" class="form-control" />
-                    <span asp-validation-for="Address" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Price" class="control-label"></label>
-                    <input asp-for="Price" class="form-control" />
-                    <span asp-validation-for="Price" class="text-danger"></span>
-                </div>
-                <div class="form-group form-check">
-                    <label class="form-check-label">
-                        <input class="form-check-input" asp-for="IsForRent" /> @Html.DisplayNameFor(model => model.IsForRent)
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label asp-for="RentPrice" class="control-label"></label>
-                    <input asp-for="RentPrice" class="form-control" />
-                    <span asp-validation-for="RentPrice" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="NumBedrooms" class="control-label"></label>
-                    <input asp-for="NumBedrooms" class="form-control" />
-                    <span asp-validation-for="NumBedrooms" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="NumBathrooms" class="control-label"></label>
-                    <input asp-for="NumBathrooms" class="form-control" />
-                    <span asp-validation-for="NumBathrooms" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="SquareFootage" class="control-label"></label>
-                    <input asp-for="SquareFootage" class="form-control" />
-                    <span asp-validation-for="SquareFootage" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Status" class="control-label"></label>
-                    <input asp-for="Status" class="form-control" />
-                    <span asp-validation-for="Status" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Pictures" class="control-label"></label>
-                    <input asp-for="Pictures" class="form-control" />
-                    <span asp-validation-for="Pictures" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
-            </form>
-        </div>
+            <div class="form-group">
+                <label asp-for="NumBedrooms" class="control-label">Кількість спалень</label>
+                <input asp-for="NumBedrooms" class="form-control" />
+                <span asp-validation-for="NumBedrooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumBathrooms" class="control-label">Кількість ванних кімнат</label>
+                <input asp-for="NumBathrooms" class="form-control" />
+                <span asp-validation-for="NumBathrooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SquareFootage" class="control-label">Загальна площа (кв.м)</label>
+                <input asp-for="SquareFootage" class="form-control" />
+                <span asp-validation-for="SquareFootage" class="text-danger"></span>
+            </div>
+            <div class="form-group" id="statusField" style="display: none">
+                <label asp-for="Status" class="control-label">Статус</label>
+                <select asp-for="Status" class="form-control">
+                    <option value="Sale">Продаж</option>
+                    <option value="Rent">Оренда</option>
+                    <option value="Sold">Продано</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pictures" class="control-label">Зображення</label>
+                <input asp-for="Pictures" class="form-control" />
+                <span asp-validation-for="Pictures" class="text-danger"></span>
+            </div>
+            <div class="w-100 text-center">
+                <input type="submit" value="Додати" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary mt-3">Повернутись до списку</a>
+            </div>
+        </form>
     </div>
+</div>
 
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
-
-    @section Scripts {
-        @{
-            await Html.RenderPartialAsync("_ValidationScriptsPartial");
-        }
+@section Scripts
+    {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-</body>
-</html>
+}

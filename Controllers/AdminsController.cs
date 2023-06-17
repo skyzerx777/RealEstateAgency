@@ -16,6 +16,7 @@ namespace RealEstateAgency.Controllers
         private readonly RealEstateAgencyContext _context;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+
         public AdminsController(RealEstateAgencyContext context, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _context = context;

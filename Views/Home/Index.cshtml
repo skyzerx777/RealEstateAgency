@@ -5,6 +5,7 @@
 @section Scripts {
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="js/site.js"></script>
 }
 <section class="filters-section py-5">
     <div class="container">
@@ -122,9 +123,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
 </section>
 <section id="company-info" class="bg-light">
@@ -178,19 +176,3 @@
 
     </div>
 </section>
-
-<script>
-    // Обработчик события отправки формы
-    document.getElementById("searchForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Предотвращает отправку формы
-
-        var selectElement = document.querySelector("#searchForm select");
-        var selectedValue = selectElement.value;
-
-        if (selectedValue === "1") {
-            window.location.href = "/sales"; // Перенаправление на страницу для купівля
-        } else if (selectedValue === "2") {
-            window.location.href = "/rent"; // Перенаправление на страницу для оренда
-        }
-    });
-</script>

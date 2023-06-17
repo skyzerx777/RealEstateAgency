@@ -2,6 +2,7 @@
 
 @{
     Layout = "_adminLayout";
+    //TODO add filters and sorting
 }
 <p>
     <a class="position-relative start-50 translate-middle text-decoration-none text-primary fs-3 fw-bold" asp-action="Create">Додати</a>
@@ -12,37 +13,19 @@
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.PropertyType)
+                        Тип нерухомості
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Address)
+                        Адреса
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Price)
+                        Ціна
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.IsForRent)
+                        Створено
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.RentPrice)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.NumBedrooms)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.NumBathrooms)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.SquareFootage)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CreatedAt)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Pictures)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Status)
+                        Статус
                     </th>
                     <th></th>
                 </tr>
@@ -58,28 +41,21 @@
                             @Html.DisplayFor(modelItem => item.Address)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Price)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.IsForRent)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.RentPrice)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.NumBedrooms)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.NumBathrooms)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.SquareFootage)
+                            @{
+                                if (item.IsForRent)
+                                {
+                                    @Html.DisplayFor(modelItem => item.RentPrice)
+                                    <span>грн/міс.</span>
+                                }
+                                else
+                                {
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                    <span>грн</span>
+                                }
+                            }
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.CreatedAt)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Pictures)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Status)

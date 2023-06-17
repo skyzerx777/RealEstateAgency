@@ -16,13 +16,14 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         {
             options.Cookie.HttpOnly = true;
             options.Cookie.Name = "RealEstateAgency.Cookie";
-            options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+            //TODO fix session time
+            options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
             options.LoginPath = "/Login/Index";
             options.LogoutPath = "/Login/Index";
         });
 //builder.Services.AddSession(options =>
 //{
-//    options.IdleTimeout = TimeSpan.FromMinutes(1); // Установите желаемое время истечения сессии
+//    options.IdleTimeout = TimeSpan.FromMinutes(1); // Желаемое время истечения сессии
 //    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Куки сессии будут доступны только через HTTPS
 //    // Установите опции сессии здесь, если требуется
 //});
@@ -46,6 +47,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
 //app.UseSession();
