@@ -70,6 +70,7 @@ namespace RealEstateAgency.Controllers
         }
 
         // POST: CustomerRequests/CreateFromProperty
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateFromProperty(string Name, string PhoneNumber, string Email, Guid PropertyID)
@@ -88,7 +89,7 @@ namespace RealEstateAgency.Controllers
                 _context.Add(customerRequest);
                 await _context.SaveChangesAsync();
 
-                TempData["Notification"] = "Запрос отправлен";
+                TempData["Notification"] = "Запит відправлено";
                 return RedirectToAction("Index", "PropertyDetails", new { id = PropertyID });
             }
 

@@ -31,3 +31,17 @@ function togglePriceRentFields() {
         }
     }
 }
+
+document.getElementById("searchForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Предотвращает отправку формы
+
+    var selectElement = document.querySelector("#searchForm select");
+    var selectedValue = selectElement.value;
+
+    if (selectedValue === "1") {
+        window.location.href = "/sales"; // Перенаправление на страницу для купівля
+    } else if (selectedValue === "2") {
+        window.location.href = "/rent"; // Перенаправление на страницу для оренда
+    }
+});
+

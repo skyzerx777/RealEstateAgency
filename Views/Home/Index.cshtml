@@ -14,10 +14,11 @@
                 <h2 class="text-white mb-4">Нерухомість в Одесі</h2>
             </div>
         </div>
+        @{/*TODO отключать кнопку при выборе стандартного значения и выбор типа недвижимости*/}
         <form id="searchForm">
             <div class="row justify-content-center">
                 <div class="col-md-3 col-sm-6">
-                    <select class="form-select rounded-pill mb-3" aria-label="sale">
+                    <select class="form-select rounded-pill mb-3" id="saleSelect" aria-label="sale">
                         <option selected disabled hidden>Купівля/Оренда</option>
                         <option value="1">Купівля</option>
                         <option value="2">Оренда</option>
@@ -33,7 +34,7 @@
                 </select>
                 </div>*@
                 <div class="col-md-3 col-sm-6 text-center">
-                    <button type="submit" class="btn btn-primary rounded-pill">Пошук</button>
+                    <button type="submit" id="searchButton" class="btn rounded-pill">Пошук</button>
                 </div>
             </div>
         </form>
